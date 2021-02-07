@@ -7,19 +7,19 @@
 //Write a function to return calculate the of JackShare.
 function find_JackShare(goldCoin,X,Y){
     
-    return null;
+    return (X*goldCoin)/100;
 }
 
 
 //Write a function to retrun the  Barbossa share.
 function find_BarbossaShare(goldCoin,X,Y){
-
-    return null;
+    var value=find_JackShare(goldCoin,X,Y);
+    return ((goldCoin-value)*Y)/100;
 }
 
 
 //Write a function to retrun the other pirates share.
 function find_OtherShare(goldCoin,X,Y){
-
-    return null;  
+    var value=find_BarbossaShare(goldCoin,X,Y) + find_JackShare(goldCoin,X,Y)
+    return (goldCoin-value)/3;  
 }
